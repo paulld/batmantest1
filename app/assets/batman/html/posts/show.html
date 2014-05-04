@@ -1,0 +1,12 @@
+<h1 data-bind="post.title"></h1>
+
+<p data-bind="post.content"></p>
+
+<a data-route="routes.posts[post].edit">Edit</a> |
+<a data-event-click="destroy">Delete</a>
+
+<ul>
+  <li data-foreach-comment="post.comments">
+    <p data-bind="comment.content"></p>
+  </li>
+</ul>
