@@ -8,5 +8,15 @@
 <ul>
   <li data-foreach-comment="post.comments">
     <p data-bind="comment.content"></p>
+    <a data-event-click="destroyComment">Delete comment</a>
   </li>
 </ul>
+
+<form data-formfor-comment="comment" data-event-submit="createComment">
+  <div>
+    <label>Content:</label>
+    <textarea data-bind="comment.content"></textarea>
+  </div>
+
+  <input name="commit" type="submit" value="Submit">
+</form>
