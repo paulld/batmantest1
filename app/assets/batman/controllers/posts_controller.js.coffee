@@ -3,18 +3,14 @@ class Batmantest1.PostsController extends Batmantest1.ApplicationController
 
   @beforeAction 'fetchPost', only: ['show', 'edit']
 
+  index: (params) ->
+    @set('posts', Batmantest1.Post.get('all'))
+
   show: (params) ->
     # Initializing a new comment with the post_id given in params to display a corresponding form
     @set('comment', new Batmantest1.Comment(post_id: params.id))
 
   edit: (params) ->
-
-  fetchPost: (params) ->
-    Batmantest1.Post.find params.id, @errorHandler (post) =>
-      @set('post', post)
-
-  index: (params) ->
-    @set('posts', Batmantest1.Post.get('all'))
 
   new: (params) ->
     @set('post', new Batmantest1.Post)
@@ -58,3 +54,7 @@ class Batmantest1.PostsController extends Batmantest1.ApplicationController
       @post.get('comments').add @comment
       @redirect '/posts/' + @post.get('id')
 
+
+  fetchPost: (params) ->
+    Batmantest1.Post.find params.id, @errorHandler (post) =>
+      @set('post', post)

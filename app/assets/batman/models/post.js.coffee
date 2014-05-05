@@ -10,3 +10,5 @@ class Batmantest1.Post extends Batman.Model
   @encode 'title', 'content'
   @encodeTimestamps()
 
+  @validate "title", presence: true
+  @validate "content", presence: true
