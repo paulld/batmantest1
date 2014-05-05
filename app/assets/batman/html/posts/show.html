@@ -2,8 +2,8 @@
 
 <p data-bind="post.content"></p>
 
-<a data-route="routes.posts[post].edit">Edit</a> |
-<a data-event-click="destroy">Delete</a>
+<a data-route="routes.posts[post].edit">Edit Post</a> |
+<a data-event-click="destroy">Delete Post</a>
 
 <ul>
   <li data-foreach-comment="post.comments">
@@ -14,7 +14,7 @@
 
 <form data-formfor-comment="comment" data-event-submit="createComment">
   <div>
-    <label>Content:</label>
+    <label>Add a comment:</label>
     <textarea data-bind="comment.content"></textarea>
   </div>
 

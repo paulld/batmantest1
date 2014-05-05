@@ -5,7 +5,7 @@ class Batmantest1.PostsController extends Batmantest1.ApplicationController
 
   show: (params) ->
     # Initializing a new comment with the post_id given in params to display a corresponding form
-    # @set('comment', new BatmanJsBlog.Comment(post_id: params.id))
+    @set('comment', new Batmantest1.Comment(post_id: params.id))
 
   edit: (params) ->
 
